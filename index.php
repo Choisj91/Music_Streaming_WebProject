@@ -1,10 +1,11 @@
 <html>
 <head>
-	<title>Welcome to Slotify!</title>
+	<title>Welcome to Streaming World</title>
 </head>
 
 <body>
-	Hello! DEAR!
+	Hello!
 </body>
 
 </html>
+
