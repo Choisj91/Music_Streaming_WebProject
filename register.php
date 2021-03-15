@@ -1,5 +1,6 @@
 <?php
     include("includes/classes/Account.php");
+    include("includes/classes/Constants.php");
 
     $account = new Account();
 
@@ -28,48 +29,57 @@
             <button type="submit" name="loginButton">LOGIN</button>
 		</form>
 
-        <form id="registerForm" action="register.php" method="POST">
-            <h2>Create your free account</h2>
-            <p>
-                <?php echo $account->getError("Your username must be between 5 and 25 characters"); ?>
-                <label for="username">Username</label>
-                <input id="username" name="username" type="text" placeholder="username" required>
-            </p>
-            <p>
-                <?php echo $account->getError("Your Firstname must be between 2 and 25 characters"); ?>
-                <label for="firstName">First name</label>
-                <input id="firstName" name="firstName" type="text" placeholder="firstName" required>
-            </p>
-            <p>
-                <?php echo $account->getError("Your Lastname must be between 2 and 25 characters"); ?>
-                <label for="lastName">Last name</label>
-                <input id="lastName" name="lastName" type="text" placeholder="lastName" required>
-            </p>
-            <p>
-                <?php echo $account->getError("Your emails don't match"); ?>
-                <?php echo $account->getError("Email is invalid"); ?>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="example@gmail.com" required>
-            </p>
-            <p>
-                <label for="email2">Confirm Email</label>
-                <input id="email2" name="email2" type="email" placeholder="example@gmail.com" required>
-            </p>
-            <p>
-                <?php echo $account->getError("Your passwords don't match"); ?>
-                <?php echo $account->getError("Your password can only contain numbers and letters"); ?>
-                <?php echo $account->getError("Your password must be between 5 and 30 characters"); ?>
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password" placeholder="Put your password" required>
-            </p>
-            <p>
-                <label for="password2">Confirm Password</label>
-                <input id="password2" name="password2" type="password" placeholder="Confirm your password" required>
-            </p>
+		<form id="registerForm" action="register.php" method="POST">
+			<h2>Create your free account</h2>
+			<p>
+				<?php echo $account->getError(Constants::$usernameCharacters); ?>
+				<label for="username">Username</label>
+				<input id="username" name="username" type="text" placeholder="e.g. bartSimpson" required>
+			</p>
 
-            <button type="submit" name="registerButton">SIGN UP</button>
+			<p>
+				<?php echo $account->getError(Constants::$firstNameCharacters); ?>
+				<label for="firstName">First name</label>
+				<input id="firstName" name="firstName" type="text" placeholder="e.g. Bart" required>
+			</p>
+
+			<p>
+				<?php echo $account->getError(Constants::$lastNameCharacters); ?>
+				<label for="lastName">Last name</label>
+				<input id="lastName" name="lastName" type="text" placeholder="e.g. Simpson" required>
+			</p>
+
+			<p>
+				<?php echo $account->getError(Constants::$emailsDoNotMatch); ?>
+				<?php echo $account->getError(Constants::$emailInvalid); ?>
+				<label for="email">Email</label>
+				<input id="email" name="email" type="email" placeholder="e.g. bart@gmail.com" required>
+			</p>
+
+			<p>
+				<label for="email2">Confirm email</label>
+				<input id="email2" name="email2" type="email" placeholder="e.g. bart@gmail.com" required>
+			</p>
+
+			<p>
+				<?php echo $account->getError(Constants::$passwordsDoNoMatch); ?>
+				<?php echo $account->getError(Constants::$passwordNotAlphanumeric); ?>
+				<?php echo $account->getError(Constants::$passwordCharacters); ?>
+				<label for="password">Password</label>
+				<input id="password" name="password" type="password" placeholder="Your password" required>
+			</p>
+
+			<p>
+				<label for="password2">Confirm password</label>
+				<input id="password2" name="password2" type="password" placeholder="Your password" required>
+			</p>
+
+			<button type="submit" name="registerButton">SIGN UP</button>
+			
 		</form>
-    </div>
+
+
+	</div>
 
 </body>
 </html>
