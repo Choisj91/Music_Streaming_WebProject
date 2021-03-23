@@ -6,7 +6,7 @@ body {
 }
 
 #background {
-    background-color: black;
+    background-color: #000;
     background-image: url(../images/c-d-x-PDX_a_82obo-unsplash.jpg);
     background-position: center;
     background-size: cover;
@@ -30,6 +30,24 @@ body {
     max-width: 1024px;
 }
 
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    gray;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    gray;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    gray;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    gray;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    gray;
+}
+
 #inputContainer {
     width: 400px;
     padding: 45px;
@@ -51,4 +69,10 @@ body {
     height: 27px;
     line-height: 27px;
     width: 100%;
+}
+
+#inputContainer label {
+    color: black;
+    font-size: 16px;
+    margin-top: 15px;
 }
