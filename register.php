@@ -27,7 +27,7 @@
 <body>
 	<?php
 	
-	if(isset($POST['registerButton'])) {
+	if(isset($_POST['registerButton'])) {
 		echo '<script>
 				$(document).ready(function() {
 					$("#loginForm").hide();
