@@ -108,3 +108,31 @@ body {
 #loginForm {
     display: none;
 }
+
+#loginText {
+    padding: 45px;
+    padding-left: 39rem;
+    padding-top: 13rem;
+}
+
+#loginText h1 {
+    color: #F0FFFF;
+    text-shadow: -1px 0 #000,
+	       0 1px #000,
+	       1px 0 #000,
+	       0 -1px #000;
+}
+
+#loginText h2 {
+    margin: 35px 0;
+}
+
+#loginText ul {
+    padding: 0;
+}
+
+#loginText li {
+    font-size: 20px;
+    list-style-type: none;
+    padding: 10px;
+}

@@ -138,8 +138,9 @@
 					<li>Create your own playlists</li>
 					<li>Follow artists to keep up to date</li>
 				</ul>
-		</div>
+			</div>
 
+		</div>
 	</div>
 
 </body>
