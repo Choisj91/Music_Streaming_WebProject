@@ -15,10 +15,20 @@ else {
 <html>
 <head>
 	<title>Welcome to Streaming World</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
-	Hello!
+	
+	<div id="nowPlayingBarContainer">
+
+	</div>
+
+
+
+
+
 </body>
 
 </html>
