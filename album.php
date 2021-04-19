@@ -25,5 +25,20 @@ $artist = $album->getArtist();
 
 </div>
 
+<div class="tracklistContainer">
+    <ul class="tracklist">
+
+        <?php
+        $songIdArray = $album->getSongIds();
+
+        foreach($songIdArray as $songId) {
+            
+        }
+
+        ?>
+    
+    </ul>
+</div>
+
 
 <?php include("includes/footer.php"); ?>
