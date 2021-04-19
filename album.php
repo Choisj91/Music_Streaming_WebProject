@@ -31,8 +31,27 @@ $artist = $album->getArtist();
         <?php
         $songIdArray = $album->getSongIds();
 
+        $i = 1;
         foreach($songIdArray as $songId) {
             
+            $albumSong = new Song($con, $songId);
+            $albumArtist = $albumSong->getArtist();
+
+            echo "<li class='tracklistRow'>
+                    <div class='trackCount'>
+                        <img class='play' src='assets/images/icons/play-white.png'>
+                        <span class='trackNumber'>$i</span>
+                    </div>
+
+                    <div class='trackInfo'>
+                        <span class='trackName'>" . $albumSong->getTitle() . "</span>
+                        <span class='artistName'>" . $albumArtist->getName() . "</span>
+                    </div>
+
+                </li>";
+
+            $i = $i + 1;
+
         }
 
         ?>
