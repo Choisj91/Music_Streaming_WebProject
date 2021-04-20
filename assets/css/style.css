@@ -299,3 +299,8 @@ body {
 .tracklistRow:hover {
     background-color: #282828;
 }
+
+.tracklistRow .trackCount {
+    width: 8%;
+    float: left;
+}
