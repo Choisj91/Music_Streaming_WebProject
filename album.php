@@ -64,8 +64,6 @@ $artist = $album->getArtist();
 
 			$i = $i + 1;
 
-
-
 		}
 
 		?>
