@@ -20,9 +20,18 @@ else {
 	<title>Good Music</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<script src="assets/js/script.js"></script>
 </head>
 
 <body>
+
+	<script>
+	var audioElement = new Audio();
+	audioElement.setTrack("assets/music/bensound-acousticbreeze.mp3");
+	audioElement.audio.play()
+	
+	</script>
 
 	<div id="mainContainer">
 
