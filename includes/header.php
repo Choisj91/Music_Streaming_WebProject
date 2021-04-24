@@ -17,7 +17,7 @@ else {
 
 <html>
 <head>
-	<title>Welcome to Streaming World</title>
+	<title>Good Music</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
