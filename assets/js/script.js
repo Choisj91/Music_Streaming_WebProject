@@ -25,8 +25,8 @@ function Audio() {
 		this.audio.pause();
 	}
 
-	this.pause = function() {
-		this.audio.pause();
+	this.replay = function() {
+		this.audio.replay();
 	}
 
 }
