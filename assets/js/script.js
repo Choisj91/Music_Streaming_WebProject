@@ -25,8 +25,4 @@ function Audio() {
 		this.audio.pause();
 	}
 
-	this.replay = function() {
-		this.audio.replay();
-	}
-
 }
