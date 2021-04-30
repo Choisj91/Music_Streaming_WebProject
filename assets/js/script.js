@@ -4,7 +4,7 @@ var audioElement;
 function formatTime(seconds) {
 	var time = Math.round(seconds);
 	var minutes = Math.floor(time / 60);        // Rounds Down
-	var seconds = time - (minutes * 60);
+	var seconds = time - (minutes * 60);		// Calculate seconds
 
 	var extraZero = (seconds < 10) ? "0" : "";
 
