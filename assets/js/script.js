@@ -1,10 +1,11 @@
 var currentPlaylist = [];
 var audioElement;
+var mouseDown = false;
 
 function formatTime(seconds) {
 	var time = Math.round(seconds);
 	var minutes = Math.floor(time / 60);        // Rounds Down
-	var seconds = time - (minutes * 60);		// Calculate seconds
+	var seconds = time - (minutes * 60);
 
 	var extraZero = (seconds < 10) ? "0" : "";
 
@@ -49,4 +50,7 @@ function Audio() {
 		this.audio.pause();
 	}
 
+	this.setTIme = function(seconds) {
+		this.audio.currentTime = seconds;
+	}
 }
