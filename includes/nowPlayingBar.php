@@ -22,16 +22,24 @@ $(document).ready(function(){
 	});
 
 	$(".playbackBar .progressBar").mousemove(function(e) {
-		if(mousedown == true) {
+		if(mouseDown == true) {
 			// Set time of song, depending on position of mouse
 			timeFromOffset(e, this);
 		} 
 	});
 
+	$(".playbackBar .progressBar").mouseup(function(e) {
+		timeFromOffset(e, this);
+	});
+
+	$(document).mouseup(function() {
+		mouseDown = false;
+	});
+
 });
 
 function timeFromOffset(mouse, progressBar) {
-	var percentage = e.offsetX / $(this).width() * 100;
+	var percentage = mouse.offsetX / $(progressBar).width() * 100;
 	var seconds = audioElement.audio.duration * (percentage / 100);
 	audioElement.setTime(seconds);
 }

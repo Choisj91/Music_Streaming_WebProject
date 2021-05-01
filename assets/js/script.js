@@ -50,7 +50,7 @@ function Audio() {
 		this.audio.pause();
 	}
 
-	this.setTIme = function(seconds) {
+	this.setTime = function(seconds) {
 		this.audio.currentTime = seconds;
 	}
 }
