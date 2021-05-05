@@ -18,6 +18,11 @@ $(document).ready(function(){
 	setTrack(currentPlaylist[0], currentPlaylist, false);
 	updateVolumeProgressBar(audioElement.audio);
 
+	// four events can be controlled in this sentence
+	$("#nowPlayingBarContainer").on("mousedown touchstart mousemove touchmove", function(e) {
+		e.preventDefault();
+	});
+
 	$(".playbackBar .progressBar").mousedown(function() {
 		mouseDown = true;
 	});
