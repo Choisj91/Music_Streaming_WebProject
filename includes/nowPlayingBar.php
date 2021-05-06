@@ -73,11 +73,24 @@ function timeFromOffset(mouse, progressBar) {
 	audioElement.setTime(seconds);
 }
 
+function nextSong() {
+	if (currentIndex == currentPlaylist.length - 1) {
+		currentIndex = 0;
+	}
+	else {
+		currentIndex++;
+	}
+
+	var trackToPlay = currentPlaylist[currentIndex];
+	setTrack(trackToPlay, currentPlaylist, true);
+}
 
 function setTrack(trackId, newPlaylist, play) {
 
 	// Retrieve the song over here
 	$.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+
+		currentIndex = currentPlaylist.indexOf(trackId);
 
 		var track = JSON.parse(data);
 		$(".trackName span").text(track.title);
