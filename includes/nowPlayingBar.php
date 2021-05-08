@@ -13,9 +13,9 @@ $jsonArray = json_encode($resultArray);
 <script>
 
 $(document).ready(function(){
-	currentPlaylist = <?php echo $jsonArray; ?>; 
+	var newPlaylist = <?php echo $jsonArray; ?>; 
 	audioElement = new Audio();
-	setTrack(currentPlaylist[0], currentPlaylist, false);
+	setTrack(newPlaylist[0], newPlaylist, false);
 	updateVolumeProgressBar(audioElement.audio);
 
 	// four events can be controlled in this sentence
@@ -34,7 +34,7 @@ $(document).ready(function(){
 		} 
 	});
 
-	$(".volumeBar .progressBar").mouseup(function(e) {
+	$(".playbackBar .progressBar").mouseup(function(e) {
 		timeFromOffset(e, this);
 	});
 
@@ -47,16 +47,16 @@ $(document).ready(function(){
 
 			var percentage = e.offsetX / $(this).width();
 
-			if(percentage >=0 && percentage <= 1) {
+			if(percentage >= 0 && percentage <= 1) {
 				audioElement.audio.volume = percentage;
 			}			
 		} 
 	});
 
-	$(".playbackBar .progressBar").mouseup(function(e) {
+	$(".volumeBar .progressBar").mouseup(function(e) {
 		var percentage = e.offsetX / $(this).width();
 
-		if(percentage >=0 && percentage <= 1) {
+		if(percentage >= 0 && percentage <= 1) {
 			audioElement.audio.volume = percentage;
 		}	
 	});
@@ -98,7 +98,7 @@ function nextSong() {
 		currentIndex++;
 	}
 
-	var trackToPlay = currentPlaylist[currentIndex];
+	var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
 	setTrack(trackToPlay, currentPlaylist, true);
 }
 
@@ -122,11 +122,14 @@ function setShuffle() {
 	if(shuffle == true) {
 		// Randomize Playlist
 		shuffleArray(shufflePlaylist);
+		currentIndex = shufflePlaylist.indexOf(audioElement.currentlyPlaying.id);
 	}
 	else {
 		// Shuffle has benn deactivated
 		// go back to regular playlist
+		currentIndex = currentPlaylist.indexOf(audioElement.currentlyPlaying.id);
 	}
+
 }
 
 function shuffleArray(a) {
@@ -147,7 +150,12 @@ function setTrack(trackId, newPlaylist, play) {
 		shuffleArray(shufflePlaylist);
 	}
 
-	currentIndex = currentPlaylist.indexOf(trackId);
+	if(shuffle == true) {
+		currentIndex = shufflePlaylist.indexOf(trackId);
+	}
+	else {
+		currentIndex = currentPlaylist.indexOf(trackId);
+	}
 	pauseSong();
 
 	// Retrieve the song over here
@@ -179,7 +187,7 @@ function setTrack(trackId, newPlaylist, play) {
 
 function playSong() {
 
-	if(audioElement.audio.currentTime == 0){
+	if(audioElement.audio.currentTime == 0) {
 		$.post("includes/handlers/ajax/updatePlays.php", { songId: audioElement.currentlyPlaying.id });
 	}
 
@@ -213,7 +221,7 @@ function pauseSong() {
 					</span>
 
 					<span class="artistName">
-						<span>Reece Kenney</span>
+						<span></span>
 					</span>
 
 				</div>
