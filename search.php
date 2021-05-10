@@ -1,4 +1,5 @@
-<?php include("includes/includedFiles.php");
+<?php 
+include("includes/includedFiles.php");
 
 if(isset($_GET['term'])) {
     $term = urldecode($_GET['term']);
@@ -19,15 +20,15 @@ else {
 
 $(".searchInput").focus();
 
-$(function(){
+$(function() {
 
-    $(".searchInput").keyup(function(){
+    $(".searchInput").keyup(function() {
         clearTimeout(timer);
 
-        timer = setTimeout(function()   {
+        timer = setTimeout(function() {
             var val = $(".searchInput").val();
             openPage("search.php?term=" + val);
-        }, 2000)
+        }, 2000);
 
     })
 
@@ -121,7 +122,7 @@ $(function(){
 		echo "<div class='searchResultRow'>
 				<div class='artistName'>
 
-					<span role='link' tabindex='0' onclick='openPage(\"artist.php?id=" . $artistFound->getId() . "\")'>
+					<span role='link' tabindex='0' onclick='openPage(\"artist.php?id=" . $artistFound->getId() ."\")'>
 					"
 					. $artistFound->getName() .
 					"

@@ -23,7 +23,6 @@ function openPage(url) {
 	$("#mainContent").load(encodedUrl);
 	$("body").scrollTop(0);
 	history.pushState(null, null, url);
-
 }
 
 function formatTime(seconds) {
