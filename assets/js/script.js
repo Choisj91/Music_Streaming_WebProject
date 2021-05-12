@@ -5,7 +5,7 @@ var audioElement;
 var mouseDown       = false;
 var currentIndex    = 0;
 var repeat          = false;
-var shuffle         = false;
+var shuffle         = true;
 var userLoggedIn;
 var timer;
 
