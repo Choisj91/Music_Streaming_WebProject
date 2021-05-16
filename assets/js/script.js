@@ -67,7 +67,7 @@ function removeFromPlaylist(button, playlistId) {
 		}
 
 		//do something when ajax returns
-		openPage("playlist.phpid=" + playlistId);
+		openPage("playlist.php?id=" + playlistId);
 	});
 
 }
