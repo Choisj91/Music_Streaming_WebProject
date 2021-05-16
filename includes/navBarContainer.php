@@ -27,7 +27,7 @@
 			</div>
 
 			<div class="navItem">
-				<span role="link" tabindex="0" onclick="openPage('profile.php')" class="navItemLink">Reece Kenney</span>
+				<span role="link" tabindex="0" onclick="openPage('profile.php')" class="navItemLink">Jae Choi</span>
 			</div>
 		</div>
 
