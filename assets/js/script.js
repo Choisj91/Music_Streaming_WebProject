@@ -142,8 +142,8 @@ function showOptionsMenu(button) {
 	var menuWidth = menu.width();
 	menu.find(".songId").val(songId);
 
-	var scrollTop = $(window).scrollTop(); // Distance from top of window to top of document
-	var elementOffset = $(button).offset().top; // Distance from top of document
+	var scrollTop = $(window).scrollTop();          // Distance from top of window to top of document
+	var elementOffset = $(button).offset().top;     // Distance from top of document
 
 	var top = elementOffset - scrollTop;
 	var left = $(button).position().left;
@@ -153,7 +153,7 @@ function showOptionsMenu(button) {
 
 function formatTime(seconds) {
 	var time = Math.round(seconds);
-	var minutes = Math.floor(time / 60);        // Rounds Down
+	var minutes = Math.floor(time / 60);            // Rounds Down
 	var seconds = time - (minutes * 60);
 
 	var extraZero = (seconds < 10) ? "0" : "";
