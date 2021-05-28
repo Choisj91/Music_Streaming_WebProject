@@ -34,6 +34,20 @@ if($newPassword1 != $newPassword2) {
     exit();
 }
 
-// if(preg_match('/[^A-Za-z0-9]/'), $newPassword1)
+if(preg_match('/[^A-Za-z0-9]/'), $newPassword1) {
+    echo "Your password must only contain letters and/or numbers";
+    exit();
+}
+
+if(strlen($newPassword1) > 30 || strlen($newPassword1) < 5) {
+    echo "Your username must between 5 and 30 characters";
+    exit();
+}
+
+$newMd5 = md5($newPassword1);
+
+$query = mysqli_query($con, "UPDATE users SET password='$newMd5' WHERE username='$username'");
+echo "Update successful";
+
 
 ?>
